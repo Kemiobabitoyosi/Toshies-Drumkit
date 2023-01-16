@@ -74,7 +74,7 @@
             /></kbd>
             <span class="sound">T</span>
           </div>
-          <div data-key="79" class="key">
+          <div onclick="keyDownEvent(event)" data-key="79" class="key">
             <kbd
               ><img
                 class="image"
@@ -83,7 +83,7 @@
             /></kbd>
             <span class="sound">O</span>
           </div>
-          <div data-key="83" class="key">
+          <div onclick="keyDownEvent(event)" data-key="83" class="key">
             <kbd
               ><img
                 class="image"
@@ -92,7 +92,7 @@
             /></kbd>
             <span class="sound">S</span>
           </div>
-          <div data-key="72" class="key">
+          <div onclick="keyDownEvent(event)" data-key="72" class="key">
             <kbd
               ><img
                 class="image"
@@ -101,7 +101,7 @@
             /></kbd>
             <span class="sound">H</span>
           </div>
-          <div data-key="73" class="key">
+          <div onclick="keyDownEvent(event)" data-key="73" class="key">
             <kbd
               ><img
                 class="image"
@@ -110,7 +110,7 @@
             /></kbd>
             <span class="sound">I</span>
           </div>
-          <div data-key="69" class="key">
+          <div onclick="keyDownEvent(event)" data-key="69" class="key">
             <kbd
               ><img
                 class="image"
@@ -119,7 +119,7 @@
             /></kbd>
             <span class="sound">E</span>
           </div>
-          <div data-key="" class="key">
+          <div onclick="keyDownEvent(event)" data-key="" class="key">
             <kbd
               ><img
                 class="image"
@@ -185,7 +185,7 @@
 
         // console.log(1, keyCode);
         const keyDiv = document.querySelector(`.key[data-key="${keyCode}"]`);
-              const keyDiv1 = document.querySelector(`.key[data-key=""]`);
+        const keyDiv1 = document.querySelector(`.key[data-key=""]`);
 
         if (!keyDiv) {
           // console.log("lock");
@@ -199,7 +199,7 @@
       };
 
       const transitionEndEvent = (event) => {
-        if ("transform" !== event.propertyName) return; 
+        if ("transform" !== event.propertyName) return;
         removeKeyCss(event.target);
       };
 
