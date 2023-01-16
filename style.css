@@ -93,7 +93,8 @@ html {
   }
 }
 
-.key, lastKey {
+.key,
+lastKey {
   border: 1rem solid;
   border-radius: 1rem;
   margin: 1rem;
@@ -127,4 +128,68 @@ kbd {
 .sound {
   font-size: 1.2rem;
   color: #ffc600;
+}
+
+@media only screen and (max-width: 960px) {
+  body,
+  html {
+    width: 100%;
+    overflow: hidden;
+  }
+  .floating {
+    width: 5rem;
+  }
+
+  /* .cards {
+   width: 50rem;
+  } */
+
+  .card {
+    align-items: center;
+    width: 3rem;
+    padding: 1rem;
+    margin-left: 5rem;
+    border-top-left-radius: 0.4rem;
+    border-bottom-right-radius: 0.4rem;
+  }
+
+  .con {
+    /* font-size: xx-small; */
+    font-family: monospace;
+    font-weight: bold;
+    font-size: 0.7rem;
+    /* text-align: center; */
+  }
+
+  .beats {
+    width: 100%;
+    margin-bottom: 30rem;
+
+    /* height: 20%; */
+  }
+
+  .image {
+    width: 3rem;
+  }
+
+  kbd {
+    /* display: block; */
+    font-size: 0.05rem;
+  }
+
+  .key,
+  lastKey {
+    border: 0.3rem solid;
+    border-radius: 0.5rem;
+    margin: 0.5rem;
+    font-size: 0.5rem;
+    padding: 0.35rem 0.15rem;
+    width: 3.5rem;
+  }
+
+  .tooth {
+  font-size: 1.5rem;
+  font-weight: bold;
+  margin-top: 15rem;
+}
 }
