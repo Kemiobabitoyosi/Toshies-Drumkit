@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="drumkit.css" />
+    <title>Document</title>
+  </head>
+  <body>
+    <container>
+      <!-- Floating images -->
+
+      <div class="images">
+        <img
+          class="floating n1"
+          src="https://toshies.xyz/_next/static/media/01.25fc8836.webp"
+          alt=""
+        />
+
+        <img
+          class="floating n2"
+          src="https://toshies.xyz/_next/static/media/03.66aaca10.webp"
+          alt=""
+        />
+        <img
+          class="floating n3"
+          src="https://toshies.xyz/_next/static/media/04.190bb20c.webp"
+          alt=""
+        />
+        <img
+          class="floating n4"
+          src="https://toshies.xyz/_next/static/media/05.faf32c47.webp"
+          alt=""
+        />
+        <img
+          class="floating n5"
+          src="https://toshies.xyz/_next/static/media/06.9f18a4f9.webp"
+          alt=""
+        />
+        <img
+          class="floating n6"
+          src="https://toshies.xyz/_next/static/media/02.246365ce.webp"
+          alt=""
+        />
+      </div>
+      <div>
+        <div class="tooth">Buttercup#3945 tooths, Tooth Tooth!</div>
+        <!-- Descripton -->
+
+        <div class="cards">
+          <div class="card">
+            <div class="con">5469</div>
+            <div class="con">TOTAL ITEMS</div>
+          </div>
+          <div class="card">
+            <div class="con">0.0369</div>
+            <div class="con">PRICE (ETH)</div>
+          </div>
+          <div class="card">
+            <div class="con">230+</div>
+            <div class="con">TRAITS</div>
+          </div>
+        </div>
+        <!-- Drum images -->
+
+        <div class="beats">
+          <div data-key="84" class="key">
+            <kbd
+              ><img
+                class="image"
+                src="https://toshies.xyz/honorary/cozomo.webp"
+                alt=""
+            /></kbd>
+            <span class="sound">T</span>
+          </div>
+          <div data-key="79" class="key">
+            <kbd
+              ><img
+                class="image"
+                src="https://toshies.xyz/honorary/deeze.webp"
+                alt=""
+            /></kbd>
+            <span class="sound">O</span>
+          </div>
+          <div data-key="83" class="key">
+            <kbd
+              ><img
+                class="image"
+                src="https://toshies.xyz/honorary/drTerminus.webp"
+                alt=""
+            /></kbd>
+            <span class="sound">S</span>
+          </div>
+          <div data-key="72" class="key">
+            <kbd
+              ><img
+                class="image"
+                src="https://toshies.xyz/honorary/fiskantes.webp"
+                alt=""
+            /></kbd>
+            <span class="sound">H</span>
+          </div>
+          <div data-key="73" class="key">
+            <kbd
+              ><img
+                class="image"
+                src="https://toshies.xyz/honorary/foobar.webp"
+                alt=""
+            /></kbd>
+            <span class="sound">I</span>
+          </div>
+          <div data-key="69" class="key">
+            <kbd
+              ><img
+                class="image"
+                src="https://toshies.xyz/honorary/justinAversano.webp"
+                alt=""
+            /></kbd>
+            <span class="sound">E</span>
+          </div>
+          <div data-key="" class="key">
+            <kbd
+              ><img
+                class="image"
+                src="https://toshies.xyz/honorary/champ.webp"
+                alt=""
+            /></kbd>
+            <span class="sound">S</span>
+          </div>
+
+          <audio
+            data-key="84"
+            src="https://raw.githubusercontent.com/wesbos/JavaScript30/master/01%20-%20JavaScript%20Drum%20Kit/sounds/clap.wav"
+          ></audio>
+          <audio
+            data-key="79"
+            src="https://raw.githubusercontent.com/wesbos/JavaScript30/master/01%20-%20JavaScript%20Drum%20Kit/sounds/hihat.wav"
+          ></audio>
+          <audio
+            data-key="83"
+            src="https://raw.githubusercontent.com/wesbos/JavaScript30/master/01%20-%20JavaScript%20Drum%20Kit/sounds/kick.wav"
+          ></audio>
+          <audio
+            data-key="72"
+            src="https://raw.githubusercontent.com/wesbos/JavaScript30/master/01%20-%20JavaScript%20Drum%20Kit/sounds/openhat.wav"
+          ></audio>
+          <audio
+            data-key="73"
+            src="https://raw.githubusercontent.com/wesbos/JavaScript30/master/01%20-%20JavaScript%20Drum%20Kit/sounds/snare.wav"
+          ></audio>
+          <audio
+            data-key="69"
+            src="https://raw.githubusercontent.com/wesbos/JavaScript30/master/01%20-%20JavaScript%20Drum%20Kit/sounds/tom.wav"
+          ></audio>
+          <audio
+            data-key=""
+            src="https://raw.githubusercontent.com/wesbos/JavaScript30/master/01%20-%20JavaScript%20Drum%20Kit/sounds/tink.wav"
+          ></audio>
+        </div>
+      </div>
+    </container>
+
+    <script>
+      const playMusic = (audioTag) => {
+        audioTag.currentTime = 0;
+        audioTag.play();
+      };
+
+      const addKeyCss = (keyDiv) => {
+        keyDiv.classList.add("playing");
+      };
+
+      const addLastKeyCss = (keyDiv1) => {
+        keyDiv1.classList.add("playing");
+      };
+
+      const removeKeyCss = (keyDiv) => {
+        keyDiv.classList.remove("playing");
+      };
+
+      const keyDownEvent = (event) => {
+        const keyCode = event.keyCode;
+        const audioTag = document.querySelector(`audio[data-key="${keyCode}"]`);
+
+        // console.log(1, keyCode);
+        const keyDiv = document.querySelector(`.key[data-key="${keyCode}"]`);
+              const keyDiv1 = document.querySelector(`.key[data-key=""]`);
+
+        if (!keyDiv) {
+          // console.log("lock");
+          const audioTag = document.querySelector(`audio[data-key=""]`);
+          playMusic(audioTag);
+          addLastKeyCss(keyDiv1);
+          return;
+        }
+        playMusic(audioTag);
+        addKeyCss(keyDiv);
+      };
+
+      const transitionEndEvent = (event) => {
+        if ("transform" !== event.propertyName) return;
+        removeKeyCss(event.target);
+      };
+
+      const keys = Array.from(document.querySelectorAll(".key"));
+      keys.forEach((key) =>
+        key.addEventListener("transitionend", transitionEndEvent)
+      );
+      document.addEventListener("keydown", keyDownEvent);
+    </script>
+  </body>
+</html>
